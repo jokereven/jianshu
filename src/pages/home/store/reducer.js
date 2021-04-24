@@ -1,5 +1,5 @@
+import { fromJS } from 'immutable';
 import * as actionTypes from './actionTypes';
-const { fromJS } = require('immutable');
 
 const defaultState = fromJS({
 	contentList: [],
@@ -13,6 +13,13 @@ const fn = (state = defaultState, action) => {
 				contentList: fromJS(action.contentList),
 				borderlist: fromJS(action.borderlist),
 			});
+		case actionTypes.ADD_HOME_LIST:
+			return state.set(
+				'contentList',
+				state
+					.get('contentList')
+					.concat(action.list._root.entries[0][1]._tail.array)
+			);
 		default:
 			return state;
 	}

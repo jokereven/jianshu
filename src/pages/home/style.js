@@ -60,3 +60,15 @@ export const Borderlist = styled.div`
 	background: url(${(props) => props.ImgSrc});
 	background-size: contain;
 `;
+
+export const Moreload = styled.div`
+	width: 100%;
+	height: 32px;
+	background-color: #ddd;
+	margin: 16px 0;
+	text-align: center;
+	line-height: 32px;
+	border-radius: 8px;
+	cursor: pointer;
+	color:#2f2f2f;
+`;

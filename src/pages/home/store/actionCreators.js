@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { fromJS } from 'immutable';
 import * as actionTypes from './actionTypes';
 
 const home_json = (result) => ({
@@ -7,11 +8,25 @@ const home_json = (result) => ({
 	contentList: result.contentList,
 });
 
+const addhomelist = (list) => ({
+	type: actionTypes.ADD_HOME_LIST,
+	list: fromJS(list),
+});
+
 export const homejson = () => {
 	return (dispatch) => {
 		axios.get('/api/home.json').then((res) => {
 			const result = res.data.data;
 			dispatch(home_json(result));
+		});
+	};
+};
+
+export const getmorelist = () => {
+	return (dispatch) => {
+		axios.get('/api/homelist.json').then((res) => {
+			const result = res.data.data;
+			dispatch(addhomelist(result));
 		});
 	};
 };

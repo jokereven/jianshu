@@ -1,15 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Content, Listitem } from '../style';
+import { actionCreators } from '../store';
+import { Content, Listitem, Moreload } from '../style';
 
 class List extends Component {
 	render() {
-		const { list } = this.props;
+		const { list, getmorelist } = this.props;
 		return (
 			<Fragment>
-				{list.map((item) => {
+				{list.map((item, index) => {
 					return (
-						<Listitem key={item.get('id')}>
+						<Listitem key={index}>
 							<Content>
 								<h2 className='title'>{item.get('title')}</h2>
 								<p className='content'>{item.get('content')}</p>
@@ -18,6 +19,7 @@ class List extends Component {
 						</Listitem>
 					);
 				})}
+				<Moreload onClick={getmorelist}>加载更多</Moreload>
 			</Fragment>
 		);
 	}
@@ -27,4 +29,9 @@ const Mapstate = (state) => ({
 	list: state.getIn(['home', 'contentList']),
 });
 
-export default connect(Mapstate, null)(List);
+const Mapdispatch = (dispatch) => ({
+	getmorelist() {
+		dispatch(actionCreators.getmorelist());
+	},
+});
+export default connect(Mapstate, Mapdispatch)(List);
