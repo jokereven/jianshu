@@ -8,9 +8,10 @@ const home_json = (result) => ({
 	contentList: result.contentList,
 });
 
-const addhomelist = (list) => ({
+const addhomelist = (list, Nextpage) => ({
 	type: actionTypes.ADD_HOME_LIST,
 	list: fromJS(list),
+	Nextpage,
 });
 
 export const homejson = () => {
@@ -22,11 +23,11 @@ export const homejson = () => {
 	};
 };
 
-export const getmorelist = () => {
+export const getmorelist = (page) => {
 	return (dispatch) => {
-		axios.get('/api/homelist.json').then((res) => {
+		axios.get('/api/homelist.json?page=' + page).then((res) => {
 			const result = res.data.data;
-			dispatch(addhomelist(result));
+			dispatch(addhomelist(result, page + 1));
 		});
 	};
 };

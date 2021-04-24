@@ -5,7 +5,7 @@ import { Content, Listitem, Moreload } from '../style';
 
 class List extends Component {
 	render() {
-		const { list, getmorelist } = this.props;
+		const { list, getmorelist, page } = this.props;
 		return (
 			<Fragment>
 				{list.map((item, index) => {
@@ -19,7 +19,7 @@ class List extends Component {
 						</Listitem>
 					);
 				})}
-				<Moreload onClick={getmorelist}>加载更多</Moreload>
+				<Moreload onClick={() => getmorelist(page)}>加载更多</Moreload>
 			</Fragment>
 		);
 	}
@@ -27,11 +27,12 @@ class List extends Component {
 
 const Mapstate = (state) => ({
 	list: state.getIn(['home', 'contentList']),
+	page: state.getIn(['home', 'listpage']),
 });
 
 const Mapdispatch = (dispatch) => ({
-	getmorelist() {
-		dispatch(actionCreators.getmorelist());
+	getmorelist(page) {
+		dispatch(actionCreators.getmorelist(page));
 	},
 });
 export default connect(Mapstate, Mapdispatch)(List);
