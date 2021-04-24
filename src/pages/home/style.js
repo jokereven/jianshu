@@ -48,3 +48,15 @@ export const Content = styled.div`
 		color: #999;
 	}
 `;
+
+export const Borderdiv = styled.div`
+	margin: 6px 0;
+	width: 280px;
+`;
+
+export const Borderlist = styled.div`
+	width: 280px;
+	height: 50px;
+	background: url(${(props) => props.ImgSrc});
+	background-size: contain;
+`;
