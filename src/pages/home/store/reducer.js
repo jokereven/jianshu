@@ -1,3 +1,4 @@
+import * as actionTypes from './actionTypes';
 const { fromJS } = require('immutable');
 
 const defaultState = fromJS({
@@ -7,7 +8,7 @@ const defaultState = fromJS({
 
 const fn = (state = defaultState, action) => {
 	switch (action.type) {
-		case 'home_json':
+		case actionTypes.HOME_JSON:
 			return state.merge({
 				contentList: fromJS(action.contentList),
 				borderlist: fromJS(action.borderlist),
