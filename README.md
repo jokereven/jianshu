@@ -5,8 +5,9 @@
 1. 管理 css 样式的模块 styled-components
 2. cnpm install react-transition-group --save 动画效果
 3. cnpm i redux --save
-4. cnpm i react-redux --save
-5. cnpm install immutable --save
+4. cnpm i react-redux --save //绑定react与redux
+5. cnpm install immutable --save //数据存储
 6. cnpm i redux-immutable --save
-7. cnpm i redux-thunk
-8. cnpm i axios --save
+7. cnpm i redux-thunk 
+8. cnpm i axios --save //ajax请求
+9. cnpm i react-router-dom --save //安装路由
