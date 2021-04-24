@@ -70,5 +70,20 @@ export const Moreload = styled.div`
 	line-height: 32px;
 	border-radius: 8px;
 	cursor: pointer;
-	color:#2f2f2f;
+	color: #2f2f2f;
+`;
+
+export const Backtop = styled.div`
+	position: fixed;
+	bottom: 100px;
+	right: 49px;
+	border-radius: 4px;
+	background-color: #ddd;
+	width: 72px;
+	height: 72px;
+	font-size: 12px;
+	font-family: 宋体;
+	text-align: center;
+	line-height: 72px;
+	cursor: pointer;
 `;

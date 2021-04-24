@@ -31,3 +31,8 @@ export const getmorelist = (page) => {
 		});
 	};
 };
+
+export const backtopshow = (show) => ({
+	type: actionTypes.BACK_TOP_SHOW,
+	show,
+});
