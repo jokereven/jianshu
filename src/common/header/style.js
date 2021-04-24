@@ -152,7 +152,7 @@ export const Searchchange = styled.span`
 `;
 
 export const Searchdiv = styled.div`
-background-color:#000;
+background-color:#fff;
 	box-shadow: 0 0 1px #ccc;
 	border: 1px solid #ddd;
 	width: 256px;

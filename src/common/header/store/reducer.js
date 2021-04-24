@@ -14,7 +14,7 @@ const defaultState = fromJS({
 	totalpage: 1,
 });
 
-export default (state = defaultState, action) => {
+const fn = (state = defaultState, action) => {
 	switch (action.type) {
 		case actionTypes.ON_FOCUSED:
 			return state.set('focused', true);
@@ -35,3 +35,5 @@ export default (state = defaultState, action) => {
 			return state;
 	}
 };
+
+export default fn;
