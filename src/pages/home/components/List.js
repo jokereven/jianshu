@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { actionCreators } from '../store';
 import { Content, Listitem, Moreload } from '../style';
 
@@ -10,13 +11,15 @@ class List extends Component {
 			<Fragment>
 				{list.map((item, index) => {
 					return (
-						<Listitem key={index}>
-							<Content>
-								<h2 className='title'>{item.get('title')}</h2>
-								<p className='content'>{item.get('content')}</p>
-							</Content>
-							<img className='img' src={item.get('ImgSrc')} alt=''></img>
-						</Listitem>
+						<Link to={'/item'}>
+							<Listitem key={index}>
+								<Content>
+									<h2 className='title'>{item.get('title')}</h2>
+									<p className='content'>{item.get('content')}</p>
+								</Content>
+								<img className='img' src={item.get('ImgSrc')} alt=''></img>
+							</Listitem>
+						</Link>
 					);
 				})}
 				<Moreload onClick={() => getmorelist(page)}>加载更多</Moreload>

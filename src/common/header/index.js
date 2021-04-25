@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import { IconfontStyle } from '../../static/iconfont/iconfont.js';
 import { actionCreator } from './store/';
@@ -68,7 +69,9 @@ class Header extends Component {
 			<Fragment>
 				<IconfontStyle />
 				<HeaderWarrper>
-					<Logo />
+					<Link to={'/'}>
+						<Logo />
+					</Link>
 					<Navbar>
 						<Navlist className='left Home'>首页</Navlist>
 						<Navlist className='left download'>下载App</Navlist>
