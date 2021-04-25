@@ -8,20 +8,27 @@ const defaultState = fromJS({
 	showScroll: false, //回到顶部的控件是否隐藏默认隐藏
 });
 
+const home_json = (state, action) => {
+	return state.merge({
+		contentList: fromJS(action.contentList),
+		borderlist: fromJS(action.borderlist),
+	});
+};
+
+const add_home_list = (state, action) => {
+	return state.merge({
+		contentList: state
+			.get('contentList')
+			.concat(action.list._root.entries[0][1]._tail.array),
+		listpage: action.Nextpage,
+	});
+};
 const fn = (state = defaultState, action) => {
 	switch (action.type) {
 		case actionTypes.HOME_JSON:
-			return state.merge({
-				contentList: fromJS(action.contentList),
-				borderlist: fromJS(action.borderlist),
-			});
+			return home_json(state, action);
 		case actionTypes.ADD_HOME_LIST:
-			return state.merge({
-				contentList: state
-					.get('contentList')
-					.concat(action.list._root.entries[0][1]._tail.array),
-				listpage: action.Nextpage,
-			});
+			return add_home_list(state, action);
 		case actionTypes.BACK_TOP_SHOW:
 			return state.set('showScroll', action.show);
 		default:
