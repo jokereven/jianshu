@@ -145,6 +145,8 @@ export const Authorheader = styled.div`
 `;
 
 export const Authorlist = styled.div`
+	display: flex;
+	flex-direction: column;
 	width: 280px;
 	height: 47px;
 	overflow: hidden;

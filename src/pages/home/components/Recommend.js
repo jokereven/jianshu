@@ -11,20 +11,19 @@ class Recommend extends Component {
 					<Authorheader>
 						<p>推荐作者</p>
 						<p className='change'>换一批</p>
-						{list.map((item) => {
+						{list.map((item, index) => {
 							return (
-								<div>
+								<Authorlist key={item.get('id')}>
 									<img className='headerimg' src={item.get('imgurl')}></img>
 									<div className='box'>
 										<h3 className='username'>{item.get('username')}</h3>
 										<p className='what'>写了133k字 · 455喜欢</p>
 									</div>
 									<div className='to_about'>+关注</div>
-								</div>
+								</Authorlist>
 							);
 						})}
 					</Authorheader>
-					<Authorlist></Authorlist>
 					<Authormore>查看更多</Authormore>
 				</Author>
 			</Fragment>

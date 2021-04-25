@@ -27,7 +27,7 @@ const add_home_list = (state, action) => {
 
 const user_massage = (state, action) => {
 	return state.merge({
-		userlist: state.get('userlist'),
+		userlist: state.get('userlist').concat(fromJS(action.userlist))
 	});
 };
 

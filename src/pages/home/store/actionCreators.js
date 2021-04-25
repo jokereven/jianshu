@@ -20,7 +20,7 @@ export const homejson = () => {
 //获取user数据
 const get_user_massage = (result) => ({
 	type: actionTypes.GET_USER_MASSAGE,
-	userlist: result.userlist,
+	userlist:result.userlist,
 });
 
 export const getusermassgae = () => {
