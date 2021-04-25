@@ -23,6 +23,10 @@ const add_home_list = (state, action) => {
 		listpage: action.Nextpage,
 	});
 };
+
+const back_top_show = (state, action) => {
+	return state.set('showScroll', action.show);
+};
 const fn = (state = defaultState, action) => {
 	switch (action.type) {
 		case actionTypes.HOME_JSON:
@@ -30,7 +34,7 @@ const fn = (state = defaultState, action) => {
 		case actionTypes.ADD_HOME_LIST:
 			return add_home_list(state, action);
 		case actionTypes.BACK_TOP_SHOW:
-			return state.set('showScroll', action.show);
+			return back_top_show(state, action);
 		default:
 			return state;
 	}

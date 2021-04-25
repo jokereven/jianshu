@@ -87,3 +87,37 @@ export const Backtop = styled.div`
 	line-height: 72px;
 	cursor: pointer;
 `;
+
+export const Down = styled.div`
+cursor: pointer;
+	display: flex;
+	align-items: center;
+	width: 280px;
+	height: 80px;
+	background-color: #fff;
+	margin-top: 16px;
+	border-radius: 4px;
+	box-shadow: 0 0 2px #ddd;
+	.img {
+		width: 60px;
+		height: 60px;
+	}
+`;
+
+export const Info = styled.div`
+	cursor: pointer;
+	width: 180px;
+	height: 80px;
+	margin-left: 16px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	.download {
+		font-size: 15px;
+		color: #333;
+	}
+	.more {
+		font-size: 13px;
+		color: #999;
+	}
+`;
