@@ -6,6 +6,7 @@ const defaultState = fromJS({
 	borderlist: [],
 	listpage: 1, //加载地一页的数据
 	showScroll: false, //回到顶部的控件是否隐藏默认隐藏
+	userlist: [],
 });
 
 const home_json = (state, action) => {
@@ -24,9 +25,16 @@ const add_home_list = (state, action) => {
 	});
 };
 
+const user_massage = (state, action) => {
+	return state.merge({
+		userlist: state.get('userlist'),
+	});
+};
+
 const back_top_show = (state, action) => {
 	return state.set('showScroll', action.show);
 };
+
 const fn = (state = defaultState, action) => {
 	switch (action.type) {
 		case actionTypes.HOME_JSON:
@@ -35,6 +43,8 @@ const fn = (state = defaultState, action) => {
 			return add_home_list(state, action);
 		case actionTypes.BACK_TOP_SHOW:
 			return back_top_show(state, action);
+		case actionTypes.GET_USER_MASSAGE:
+			return user_massage(state, action);
 		default:
 			return state;
 	}

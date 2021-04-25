@@ -32,6 +32,7 @@ class Home extends Component {
 	}
 	componentDidMount() {
 		this.props.changehomedata();
+		this.props.gettheusermassage();
 		this.bindEvents();
 	}
 	componentWillUnmount() {
@@ -56,7 +57,9 @@ const Mapdispatch = (dispatch) => ({
 		} else {
 			dispatch(actionCreators.backtopshow(false));
 		}
-	},
+	}, gettheusermassage() {
+		dispatch(actionCreators.getusermassgae());
+	}
 });
 
 export default connect(Mapstate, Mapdispatch)(Home);
