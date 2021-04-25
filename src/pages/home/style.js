@@ -89,7 +89,7 @@ export const Backtop = styled.div`
 `;
 
 export const Down = styled.div`
-cursor: pointer;
+	cursor: pointer;
 	display: flex;
 	align-items: center;
 	width: 280px;
@@ -120,4 +120,74 @@ export const Info = styled.div`
 		font-size: 13px;
 		color: #999;
 	}
+`;
+
+export const Author = styled.div`
+	width: 280px;
+	height: 320px;
+	position: relative;
+`;
+
+export const Authorheader = styled.div`
+	display: flex;
+	justify-content: space-between;
+	width: 280px;
+	line-height: 32px;
+	height: 32px;
+	background-color: #fff;
+	p {
+		font-size: 14px;
+		color: #969696;
+	}
+	.change {
+		cursor: pointer;
+	}
+`;
+
+export const Authorlist = styled.div`
+	width: 280px;
+	height: 47px;
+	overflow: hidden;
+	.headerimg {
+		width: 48px;
+		height: 48px;
+		border-radius: 50px;
+		float: left;
+	}
+	.box {
+		width: 168px;
+		float: left;
+		margin-top: 4px;
+		.username {
+			font-size: 14px;
+			padding-left: 12px;
+		}
+		.what {
+			font-size: 12px;
+			color: #969696;
+			margin-top: 12px;
+			padding-left: 8px;
+		}
+	}
+	.to_about {
+		color: #096;
+		padding: 8px 4px 0px 0px;
+		font-size: 12px;
+	}
+`;
+
+export const Authormore = styled.div`
+	width: 280px;
+	height: 32px;
+	border-radius: 4px;
+	margin-top: 4px;
+	line-height: 32px;
+	text-align: center;
+	box-shadow: 0 0 2px #ddd;
+	position: absolute;
+	bottom: 0px;
+	font-size: 12px;
+	font-family: 宋体;
+	background-color: #ccc;
+	cursor: pointer;
 `;
