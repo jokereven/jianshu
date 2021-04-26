@@ -23,7 +23,7 @@ class Recommend extends Component {
 								></img>
 								<div className='box'>
 									<h3 className='username'>{item.get('username')}</h3>
-									<p className='what'>写了133k字 · 455喜欢</p>
+									<p className='what'>写了133k字 455喜欢</p>
 								</div>
 								<div className='to_about'>+关注</div>
 							</Authorlist>
