@@ -123,30 +123,31 @@ export const Info = styled.div`
 `;
 
 export const Author = styled.div`
+	overflow: hidden;
 	width: 280px;
-	height: 320px;
+	height: 300px;
 	position: relative;
 `;
 
 export const Authorheader = styled.div`
-	display: flex;
-	justify-content: space-between;
+	overflow: hidden;
 	width: 280px;
 	line-height: 32px;
 	height: 32px;
 	background-color: #fff;
-	p {
+	.arthor {
 		font-size: 14px;
 		color: #969696;
 	}
 	.change {
+		color: #969696;
+		font-size: 12px;
+		float: right;
 		cursor: pointer;
 	}
 `;
 
 export const Authorlist = styled.div`
-	display: flex;
-	flex-direction: column;
 	width: 280px;
 	height: 47px;
 	overflow: hidden;
