@@ -13,10 +13,14 @@ class Recommend extends Component {
 						<span className='arthor'>推荐作者</span>
 						<span className='change'>换一批</span>
 					</Authorheader>
-					{list.map((item) => {
+					{list.map((item, index) => {
 						return (
-							<Authorlist key={item.get('id')}>
-								<img className='headerimg' src={item.get('imgurl')}></img>
+							<Authorlist key={index}>
+								<img
+									className='headerimg'
+									src={item.get('imgurl')}
+									alt=''
+								></img>
 								<div className='box'>
 									<h3 className='username'>{item.get('username')}</h3>
 									<p className='what'>写了133k字 · 455喜欢</p>
