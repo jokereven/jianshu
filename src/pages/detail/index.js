@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { actionCreators } from './store';
 import { Content, Father, Header } from './style';
-import {actionCreators} from './store'
 
 class Detail extends Component {
 	render() {
@@ -17,7 +17,7 @@ class Detail extends Component {
 		);
 	}
 	componentDidMount() {
-		this.props.getdetail();
+		this.props.getdetail(this.props.match.params.id);
 	}
 }
 
@@ -27,9 +27,9 @@ const Mapstate = (state) => ({
 });
 
 const Mapdispatch = (dispatch) => ({
-	getdetail() {
-		dispatch(actionCreators.Getdetail())
-	 }
-})
+	getdetail(id) {
+		dispatch(actionCreators.Getdetail(id));
+	},
+});
 
 export default connect(Mapstate, Mapdispatch)(Detail);

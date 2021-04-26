@@ -12,7 +12,7 @@ class List extends Component {
 				{list.map((item, index) => {
 					return (
 						<Listitem key={index}>
-							<Link to={'/detail'}>
+							<Link to={'/detail/' + item.get('id')}>
 								<Content>
 									<h2 className='title'>{item.get('title')}</h2>
 									<p className='content'>{item.get('content')}</p>
