@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
+import { actionCreators } from '../../pages/login/store/';
 import { IconfontStyle } from '../../static/iconfont/iconfont.js';
 import { actionCreator } from './store/';
 import {
@@ -64,7 +65,14 @@ class Header extends Component {
 		}
 	}
 	render() {
-		const { focused, headlnonfocus, headlnonblur, list, login } = this.props;
+		const {
+			focused,
+			headlnonfocus,
+			headlnonblur,
+			list,
+			login,
+			logout,
+		} = this.props;
 		return (
 			<Fragment>
 				<IconfontStyle />
@@ -79,7 +87,9 @@ class Header extends Component {
 							<span className='iconfont'>&#xe636;</span>
 						</Navlist>
 						{login ? (
-							<Navlist className='right'>退出</Navlist>
+							<Navlist className='right' onClick={logout}>
+								退出
+							</Navlist>
 						) : (
 							<Link to='/login'>
 								<Navlist className='right' style={{ cursor: 'pointer' }}>
@@ -105,9 +115,11 @@ class Header extends Component {
 					</Navbar>
 					<Addition>
 						<Button className='login'>注册</Button>
-						<Button className='writter'>
-							<span className='iconfont'>&#xe708;</span>写文章
-						</Button>
+						<Link to='/write'>
+							<Button className='writter'>
+								<span className='iconfont'>&#xe708;</span>写文章
+							</Button>
+						</Link>
 					</Addition>
 				</HeaderWarrper>
 			</Fragment>
@@ -158,6 +170,9 @@ const mapDispatchToProps = (dispatch) => {
 			} else {
 				dispatch(actionCreator.changepage(1));
 			}
+		},
+		logout() {
+			dispatch(actionCreators.logout());
 		},
 	};
 };

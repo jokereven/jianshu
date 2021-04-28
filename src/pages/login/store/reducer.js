@@ -1,5 +1,4 @@
 import { fromJS } from 'immutable';
-import login from '../index';
 import * as actionTypes from './actionTypes';
 
 const defaultState = fromJS({
@@ -9,7 +8,9 @@ const defaultState = fromJS({
 const fn = (state = defaultState, action) => {
 	switch (action.type) {
 		case actionTypes.CHANGE_LOGIN:
-			return state.set(login, action.value);
+			return state.set('login', action.value);
+		case actionTypes.LOG_OUT:
+			return state.set('login', action.value);
 		default:
 			return state;
 	}

@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { actionCreators } from './store';
 import { Content, Father, Header } from './style';
 
@@ -32,4 +33,4 @@ const Mapdispatch = (dispatch) => ({
 	},
 });
 
-export default connect(Mapstate, Mapdispatch)(Detail);
+export default connect(Mapstate, Mapdispatch)(withRouter(Detail));
