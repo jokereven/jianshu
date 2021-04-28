@@ -64,7 +64,7 @@ class Header extends Component {
 		}
 	}
 	render() {
-		const { focused, headlnonfocus, headlnonblur, list } = this.props;
+		const { focused, headlnonfocus, headlnonblur, list, login } = this.props;
 		return (
 			<Fragment>
 				<IconfontStyle />
@@ -78,8 +78,15 @@ class Header extends Component {
 						<Navlist className='right'>
 							<span className='iconfont'>&#xe636;</span>
 						</Navlist>
-						<Navlist className='right'>登陆</Navlist>
-
+						{login ? (
+							<Navlist className='right'>退出</Navlist>
+						) : (
+							<Link to='/login'>
+								<Navlist className='right' style={{ cursor: 'pointer' }}>
+									登入
+								</Navlist>
+							</Link>
+						)}
 						<Search>
 							<CSSTransition timeout={500} in={focused} classNames='slide'>
 								<Navsearch
@@ -116,6 +123,7 @@ const mapStateToProps = (state) => {
 		page: state.getIn(['header', 'page']),
 		totalpage: state.getIn(['header', 'totalpage']),
 		mouseIn: state.getIn(['header', 'mouseIn']),
+		login: state.getIn(['login', 'login']),
 	};
 };
 
