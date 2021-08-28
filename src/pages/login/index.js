@@ -14,7 +14,11 @@ class login extends Component {
 						<Namebox
 							ref={(input) => {
 								this.account = input;
+<<<<<<< HEAD
 							}}	
+=======
+							}}
+>>>>>>> 5fd7f175313e8d9d0124e16666f20f32388e88e4
 						></Namebox>
 						<Passwdbox
 							type='password'
