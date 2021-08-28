@@ -1,7 +1,8 @@
 ## 这是学习 React 前端框架的项目
 
-## 安装的模块
+#### 安装的模块
 
+```
 1. 管理 css 样式的模块 styled-components
 2. cnpm install react-transition-group --save 动画效果
 3. cnpm i redux --save
@@ -12,3 +13,5 @@
 8. cnpm i axios --save //ajax 请求
 9. cnpm i react-router-dom --save //安装路由
 10. yarn add react-loadable //异步处理
+```
+
