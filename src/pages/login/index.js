@@ -12,20 +12,14 @@ class login extends Component {
 				<Fragment>
 					<Loginbox>
 						<Namebox
-							ref={(input) => {
+							ref={input => {
 								this.account = input;
-<<<<<<< HEAD
-							}}	
-=======
-							}}
->>>>>>> 5fd7f175313e8d9d0124e16666f20f32388e88e4
-						></Namebox>
+							}}></Namebox>
 						<Passwdbox
 							type='password'
-							ref={(input) => {
+							ref={input => {
 								this.passwd = input;
-							}}
-						></Passwdbox>
+							}}></Passwdbox>
 						<button onClick={() => this.props.login(this.account, this.passwd)}>
 							Submit
 						</button>
@@ -39,11 +33,11 @@ class login extends Component {
 	componentDidMount() {}
 }
 
-const Mapstate = (state) => ({
+const Mapstate = state => ({
 	loginstatus: state.getIn(['login', 'login']),
 });
 
-const Mapdispatch = (dispatch) => ({
+const Mapdispatch = dispatch => ({
 	login(accountElem, passwdElem) {
 		console.log(accountElem, passwdElem);
 		dispatch(actionCreators.login(accountElem.value, passwdElem.value));

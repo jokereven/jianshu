@@ -16,11 +16,6 @@ const home_json = (state, action) => {
 	});
 };
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 5fd7f175313e8d9d0124e16666f20f32388e88e4
 const add_home_list = (state, action) => {
 	return state.merge({
 		contentList: state
